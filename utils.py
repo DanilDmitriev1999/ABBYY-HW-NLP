@@ -1,5 +1,13 @@
 from tqdm import tqdm
 from nltk.translate.bleu_score import corpus_bleu
+import torch
+import math
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.cuda import FloatTensor, LongTensor
+
+BOS_TOKEN = '<s>'
+EOS_TOKEN = '</s>'
 
 def do_epoch(model, criterion, data_iter, optimizer=None, name=None):
     epoch_loss = 0
