@@ -69,10 +69,6 @@ def evaluate_model(model, iterator):
             
             output = encoder_output
             hidden = encoder_hidden
-            if model._bidirectional:
-                output = None
-                hidden = None
-            
             result = [LongTensor([bos_index]).expand(1, batch.target.shape[1])]
             
             for _ in range(30):
