@@ -42,7 +42,7 @@ class PretrainingData:
                         self.examples.append(Example.fromlist([source_text, target_text], self.fields))
                         
     def start(self):
-        read_data()
+        self.read_data()
         dataset = Dataset(self.examples, self.fields)
         train_dataset, test_dataset = dataset.split(split_ratio=0.85)
         print('Train size =', len(train_dataset))
