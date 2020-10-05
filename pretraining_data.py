@@ -19,13 +19,13 @@ class PretrainingData:
         self.BOS_TOKEN = '<s>'
         self.EOS_TOKEN = '</s>'
         
-        self.source_field = Field(tokenize='spacy', init_token=BOS_TOKEN,
-                                   eos_token=EOS_TOKEN, lower=True,
-                                    batch_first=batch_first)
+        self.source_field = Field(tokenize='spacy', init_token=self.BOS_TOKEN,
+                                   eos_token=self.EOS_TOKEN, lower=True,
+                                    batch_first=self.batch_first)
         
-        self.target_field = Field(tokenize='moses', init_token=BOS_TOKEN,
-                                   eos_token=EOS_TOKEN,lower=True,
-                                    batch_first=batch_first)
+        self.target_field = Field(tokenize='moses', init_token=self.BOS_TOKEN,
+                                   eos_token=self.EOS_TOKEN,lower=True,
+                                    batch_first=self.batch_first)
         
         self.fields = [('source', self.source_field), ('target', self.target_field)]
         
