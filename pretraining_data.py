@@ -5,11 +5,11 @@ from tqdm import tqdm
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-class PretraingData:
+class PretrainingData:
     def __init__(self, file, DEVICE, batch_first=False, batch_size=64):
         assert type(batch_first) == bool
         assert type(file) == str
-        assert file[-3] == 'txt'
+        assert file[-3:] == 'txt'
         
         self.batch_size = batch_size
         self.file = file
