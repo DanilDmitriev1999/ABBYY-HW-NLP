@@ -42,7 +42,6 @@ def do_epoch(model, criterion, data_iter, optimizer=None, name=None):
                 name, epoch_loss / batches_count, math.exp(epoch_loss / batches_count))
             )
             progress_bar.refresh()
-
     return epoch_loss / batches_count
 
 
