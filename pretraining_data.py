@@ -12,6 +12,7 @@ class PretrainingData:
         assert file[-3:] == 'txt'
         
         self.batch_size = batch_size
+        self.batch_first = batch_first
         self.file = file
         
         self.MAX_TOKENS_COUNT = 16
@@ -30,7 +31,6 @@ class PretrainingData:
         self.fields = [('source', self.source_field), ('target', self.target_field)]
         
     def read_data(self):
-        
         self.examples = []
         with open(self.file) as f:
             for line in tqdm(f, total=328190):
