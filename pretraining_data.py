@@ -48,9 +48,9 @@ class PretrainingData:
         print('Train size =', len(train_dataset))
         print('Test size =', len(test_dataset))
         source_field.build_vocab(train_dataset, min_freq=2)
-        print('Source vocab size =', len(source_field.vocab))
+        print('Source vocab size =', len(self.source_field.vocab))
         target_field.build_vocab(train_dataset, min_freq=2)
-        print('Target vocab size =', len(target_field.vocab))
+        print('Target vocab size =', len(self.target_field.vocab))
         
         train_iter, test_iter = BucketIterator.splits(
             datasets=(train_dataset, test_dataset),
