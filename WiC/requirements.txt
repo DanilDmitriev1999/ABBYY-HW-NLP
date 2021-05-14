@@ -5,3 +5,4 @@ pytorch-lightning==1.1.6
 transformers
 sentencepiece
 scikit-learn
+comet_ml
